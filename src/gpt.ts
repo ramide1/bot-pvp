@@ -29,7 +29,10 @@ const callGpt = async (system: string, options: any, message: string, username: 
                             }
                         ]
                     }
-                ))
+                )),
+                generationConfig: {
+                    maxOutputTokens: options.maxTokens
+                }
             })
         });
         if (!response.ok) {
@@ -46,7 +49,8 @@ const callGpt = async (system: string, options: any, message: string, username: 
             },
             body: JSON.stringify({
                 model: options.model,
-                messages
+                messages,
+                max_tokens: options.maxTokens
             })
         });
         if (!response.ok) {

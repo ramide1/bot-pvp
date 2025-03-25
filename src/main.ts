@@ -20,7 +20,8 @@ const options = {
     url: (process.env.URL !== undefined) ? process.env.URL : 'https://api.openai.com/v1/chat/completions',
     model: (process.env.MODEL !== undefined) ? process.env.MODEL : 'gpt-4o-mini',
     apiKey: (process.env.APIKEY !== undefined) ? process.env.APIKEY : '',
-    historyFile: (process.env.HISTORYFILE !== undefined) ? process.env.HISTORYFILE : 'history.yml'
+    historyFile: (process.env.HISTORYFILE !== undefined) ? process.env.HISTORYFILE : 'history.yml',
+    maxTokens: (process.env.MAXTOKENS !== undefined) ? process.env.MAXTOKENS : 800,
 }
 
 bot.loadPlugin(pathfinder);
