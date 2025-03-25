@@ -22,6 +22,7 @@ const options = {
     apiKey: (process.env.APIKEY !== undefined) ? process.env.APIKEY : '',
     historyFile: (process.env.HISTORYFILE !== undefined) ? process.env.HISTORYFILE : 'history.yml',
     maxTokens: (process.env.MAXTOKENS !== undefined) ? process.env.MAXTOKENS : 800,
+    instructions: (process.env.INSTRUCTIONS !== undefined) ? process.env.INSTRUCTIONS : 'Answer user questions.'
 }
 
 bot.loadPlugin(pathfinder);

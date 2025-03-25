@@ -1,9 +1,9 @@
 import { loadHistory, saveHistory } from './history';
 
-const callGpt = async (system: string, options: any, message: string, username: string) => {
+const callGpt = async (options: any, message: string, username: string) => {
     const userHistory = loadHistory(username, options.historyFile);
     const messages = [
-        { role: options.googleApi ? 'user' : 'system', content: system }
+        { role: options.googleApi ? 'user' : 'system', content: options.instructions }
     ];
 
     userHistory.forEach((entry: any) => {

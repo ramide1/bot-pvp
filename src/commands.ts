@@ -61,7 +61,7 @@ const handleChatCommand = async (bot: any, options: any, username: string, messa
             return;
         }
         bot.chat('Sending question to GPT');
-        const gptResponse = await callGpt('Answer user questions.', options, args.join(' '), username);
+        const gptResponse = await callGpt(options, args.join(' '), username);
         if (!gptResponse.error) {
             sendSplitMessage(bot, gptResponse.message ? gptResponse.message : '');
         } else {
